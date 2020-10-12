@@ -1,0 +1,31 @@
+table{
+    width: 300px;
+    table-layout: auto;
+}
+
+
+#Task{
+    width: 100px;
+    margin-left: 30px
+}
+
+#Duration{
+    width: 150px
+}
+
+#ConnFrom{
+    width: 60px;
+    margin-left: 10px
+}
+
+#ConnTo{
+    width: 60px
+}
+
+#ConnType{
+    width: 100px
+}
+
+#ConnDuration{
+    width: 50px;
+}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+{% for table in tasks %}
+            {{ table|safe }}
+{% endfor %}<br><br>
+
+{% for table in conns %}
+            {{ table|safe }}
+{% endfor %}<br><br>
+<h2>Results:</h2>
+
+{% for table in results %}
+            {{ table|safe }}
+{% endfor %}
+<br><br><br><br><br>
+<form action="" method="POST">
+    <input type="submit" name="Submit" value="Reset">
+</form>
+
+{% endblock %}

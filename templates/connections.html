@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+{% for table in tasks %}
+            {{ table|safe }}
+{% endfor %}<br><br>
+
+{% for table in conns %}
+            {{ table|safe }}
+{% endfor %}
+
+<div class="form">
+    <form action="" method="POST">
+        <select id="ConnFrom" name="ConnFrom">
+            {% for task in all_tasks %}
+            <option value="{{ task }}">{{ task }}</option>
+            {%  endfor %}
+        </select>
+
+        <select id="ConnTo" name="ConnTo">
+            {% for task in all_tasks %}
+            <option value="{{ task }}">{{ task }}</option>
+            {%  endfor %}
+        </select>
+
+        <select id="ConnType" name="ConnType">
+            <option value="Start-start">Start-start</option>
+            <option value="Start-finish">Start-finish</option>
+            <option value="Finish-start">Finish-start</option>
+            <option value="Finish-finish">Finish-finish</option>
+        </select>
+
+        <input type="text" name="ConnDuration" id="ConnDuration" placeholder="Duration">
+
+        <input type="submit" name="Submit" value="Submit"><br><br>
+
+                Delete row:
+        <select id="Del" name="Del">
+            {% for value in all_rows %}
+            <option value="{{ value }}">{{ value }}</option>
+            {%  endfor %}
+        </select>
+        <input type="submit" name="Submit" value="Delete"><br><br><br><br><br><br>
+
+        <input type="submit" name="Submit" value="Calculate"><br><br><br><br><br><br><br><br><br>
+
+        <input type="submit" name="Submit" value="Reset">
+    </form>
+</div>
+
+{% endblock %}
